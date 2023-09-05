@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "nightfox",
+  colorscheme = "rose-pine",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -70,18 +70,18 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    require'lspconfig'.terraformls.setup{}
-        vim.api.nvim_exec(
-        [[ 
-           augroup Format
-             autocmd!
-             autocmd BufWritePre *.tf,*.tfvars lua vim.lsp.buf.formatting_sync(nil, 300)
-           augroup END
-        ]], 
-        false
-      )
+    -- require'lspconfig'.terraformls.setup{}
+    --     vim.api.nvim_exec(
+    --     [[ 
+    --        augroup Format
+    --          autocmd!
+    --          autocmd BufWritePre *.tf,*.tfvars lua vim.lsp.buf.formatting_sync(nil, 1000)
+    --        augroup END
+    --     ]], 
+    --     false
+    --   )
   end,
-})
+}
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
@@ -94,8 +94,8 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
-  end,
-}
+--  end,
+--}
 
     -- Set up custom filetypes
     -- vim.filetype.add {
@@ -109,5 +109,5 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
-  end,
-}
+--  end,
+--}
